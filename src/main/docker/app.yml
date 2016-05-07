@@ -1,0 +1,15 @@
+version: '2'
+services:
+    manatee-app:
+        image: manatee
+        external_links:
+            - manatee-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/manatee?useUnicode=true&characterEncoding=utf8&useSSL=false
+        ports:
+            - 8080:8080
+    manatee-mysql:
+        extends:
+            file: mysql.yml
+            service: manatee-mysql
