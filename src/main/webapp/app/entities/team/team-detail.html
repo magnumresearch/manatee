@@ -1,0 +1,29 @@
+
+<div>
+    <h2><span>Team</span> {{vm.team.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Organization</span></dt>
+        <dd>
+            <span>{{vm.team.organization}}</span>
+        </dd>
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.team.name}}</span>
+        </dd>
+        <dt><span>Specialty</span></dt>
+        <dd>
+            <span>{{vm.team.specialty}}</span>
+        </dd>
+        <dt><span>Max Patients</span></dt>
+        <dd>
+            <span>{{vm.team.maxPatients}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

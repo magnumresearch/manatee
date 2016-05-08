@@ -1,0 +1,30 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "organization",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "specialty",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "maxPatients",
+      "fieldType": "Long"
+    }
+  ],
+  "changelogDate": "20160508162044",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "team"
+}

@@ -1,0 +1,68 @@
+<div>
+    <h2>Queues</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="queue.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Queue
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Status</span></th>
+                    <th><span>Timestamp Initial</span></th>
+                    <th><span>Timestamp Final</span></th>
+                    <th><span>Patient</span></th>
+                    <th><span>Team</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="queue in vm.queues track by queue.id">
+                    <td><a ui-sref="queue-detail({id:queue.id})">{{queue.id}}</a></td>
+                    <td>{{queue.status}}</td>
+                    <td>{{queue.timestampInitial | date:'medium'}}</td>
+                    <td>{{queue.timestampFinal | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="patient-detail({id:queue.patient.id})">{{queue.patient.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="team-detail({id:queue.team.id})">{{queue.team.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="queue-detail({id:queue.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="queue.edit({id:queue.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="queue.delete({id:queue.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

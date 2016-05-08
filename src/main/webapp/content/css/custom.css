@@ -1,0 +1,156 @@
+.chart .legend {
+  fill: black;
+  font: 14px sans-serif;
+  text-anchor: start;
+  font-size: 12px;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart .label {
+  fill: black;
+  font: 14px sans-serif;
+  text-anchor: end;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.connectedSortable-head {
+    /*border: 1px solid #eee;*/
+    /*border-collapse: collapse;*/
+    display: block;
+    width: 100%;
+    /*min-height: 20px;*/
+    /*padding: 0px 0 0 0;*/
+    /*float: left;*/
+    
+    height: 15px;
+    overflow-y: scroll;
+    /*margin-right: 50px;*/
+    /*background-color: blue;*/
+  }
+  .connectedSortable-head tr {
+    width: 100%;
+    /*background-color: red;*/
+    /*height: 15px;*/
+  }
+.connectedSortable-head tr th {
+    /*margin-right: 20px;*/
+    /*background-color: black;*/
+    font-size: 0.8em;
+    font-weight: normal;
+    /*width: 100%;*/
+    /*height: 20%;*/
+    color: #777;
+    text-align: center;
+    border-bottom:1pt solid #e5e5e5;
+    /*border-top:1pt solid #e5e5e5;*/
+  }
+
+.queueTable {
+    display: block;
+    width: 100%;    
+    height: 120px;
+    overflow-y: scroll;
+  }
+  .queueTable tr {
+    width: 100%;
+    /*background-color: red;*/
+    height: 30px;
+  }
+.queueTable tr td {
+    /*margin-right: 20px;*/
+    /*background-color: black;*/
+    font-size: 0.8em;
+    /*width: 100%;*/
+    /*height: 20%;*/
+    color: #777;
+    text-align: center;
+    border-bottom:1pt solid #e5e5e5;
+    border-top:1pt solid #e5e5e5;
+  }
+.queueTable tr:hover td{ 
+    background-color: #9068be;
+    color: white;
+}
+
+.dischargedQueueTable-head {
+    display: block;
+    width: 100%;
+    
+    /*height: 200px;*/
+    overflow-y: scroll;
+  }
+  .dischargedQueueTable-head tr {
+    width: 100%;
+    height: 30px;
+  }
+.dischargedQueueTable-head tr th {
+    font-size: 0.7em;
+    font-weight: lighter;
+    color: #777;
+    text-align: center;
+    border-bottom:1pt solid #e5e5e5;
+  }
+.dischargedQueueTable {
+    display: block;
+    width: 100%;    
+    height: 200px;
+    overflow-y: scroll;
+  }
+  .dischargedQueueTable tr {
+    width: 100%;
+    height: 30px;
+  }
+.dischargedQueueTable tr td {
+    /*margin-right: 20px;*/
+    /*background-color: black;*/
+    font-size: 0.7em;
+    font-weight: lighter;
+    /*width: 100%;*/
+    /*height: 20%;*/
+    color: #777;
+    text-align: center;
+    /*border-bottom:1pt solid #e5e5e5;
+    border-top:1pt solid #e5e5e5;*/
+  }
+  .dischargedQueueTable tr td button{ 
+    background-color: transparent;
+    border: 1pt solid transparent;
+}
+.dischargedQueueTable tr:hover td{ 
+    background-color: #9068be;
+    color: white;
+}
+.dischargedQueueTable tr:hover td button{ 
+    background-color: #9068be;
+    color: white;
+    border: 1pt solid transparent;
+}
+
+.queue-title {
+  width: 100%;
+  padding: 5px;
+}
+.table-nonfluid tr{
+  /*background-color: black;*/
+  /*margin: 0px !important;*/
+}
+
+.grayout td{
+  background-color: #d2d2d2;
+}
+

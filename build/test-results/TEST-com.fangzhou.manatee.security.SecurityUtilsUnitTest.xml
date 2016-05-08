@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.fangzhou.manatee.security.SecurityUtilsUnitTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-05-08T01:45:02" hostname="Fangzhous-Mac-mini.local" time="0.231">
+  <properties/>
+  <testcase name="testIsAuthenticated" classname="com.fangzhou.manatee.security.SecurityUtilsUnitTest" time="0.205"/>
+  <testcase name="testgetCurrentUserLogin" classname="com.fangzhou.manatee.security.SecurityUtilsUnitTest" time="0.014"/>
+  <testcase name="testAnonymousIsNotAuthenticated" classname="com.fangzhou.manatee.security.SecurityUtilsUnitTest" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

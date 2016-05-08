@@ -1,0 +1,40 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "many-to-one",
+      "relationshipName": "patient",
+      "otherEntityName": "patient",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "many-to-one",
+      "relationshipName": "team",
+      "otherEntityName": "team",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "timestampInitial",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "timestampFinal",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "changelogDate": "20160508162046",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "queue"
+}

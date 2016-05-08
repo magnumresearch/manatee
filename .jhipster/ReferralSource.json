@@ -1,0 +1,20 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "contact",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160508162045",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "referral_source"
+}

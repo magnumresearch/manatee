@@ -1,0 +1,70 @@
+<div>
+    <h2>Patients</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="patient.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Patient
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Medical Referral Id</span></th>
+                    <th><span>Age</span></th>
+                    <th><span>Condition Desciption</span></th>
+                    <th><span>Priority</span></th>
+                    <th><span>Deadline</span></th>
+                    <th><span>Referral Source</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="patient in vm.patients track by patient.id">
+                    <td><a ui-sref="patient-detail({id:patient.id})">{{patient.id}}</a></td>
+                    <td>{{patient.name}}</td>
+                    <td>{{patient.medicalReferralId}}</td>
+                    <td>{{patient.age}}</td>
+                    <td>{{patient.conditionDesciption}}</td>
+                    <td>{{patient.priority}}</td>
+                    <td>{{patient.deadline | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="referral-source-detail({id:patient.referralSource.id})">{{patient.referralSource.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="patient-detail({id:patient.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="patient.edit({id:patient.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="patient.delete({id:patient.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

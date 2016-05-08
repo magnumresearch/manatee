@@ -1,0 +1,41 @@
+
+<div>
+    <h2><span>Patient</span> {{vm.patient.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.patient.name}}</span>
+        </dd>
+        <dt><span>Medical Referral Id</span></dt>
+        <dd>
+            <span>{{vm.patient.medicalReferralId}}</span>
+        </dd>
+        <dt><span>Age</span></dt>
+        <dd>
+            <span>{{vm.patient.age}}</span>
+        </dd>
+        <dt><span>Condition Desciption</span></dt>
+        <dd>
+            <span>{{vm.patient.conditionDesciption}}</span>
+        </dd>
+        <dt><span>Priority</span></dt>
+        <dd>
+            <span>{{vm.patient.priority}}</span>
+        </dd>
+        <dt><span>Deadline</span></dt>
+        <dd>
+            <span>{{vm.patient.deadline | date:'medium'}}</span>
+        </dd>
+        <dt><span>Referral Source</span></dt>
+        <dd>
+            <a ui-sref="referral-source-detail({id:vm.patient.referralSource.id})">{{vm.patient.referralSource.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>
