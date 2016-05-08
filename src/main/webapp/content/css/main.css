@@ -1,8 +1,197 @@
-body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+html, body {
+    background: #fff;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #000;
+    height: 100%;
+    margin: 0;
 }
+
+#body-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.navbar {
+    /*background: #353434;*/
+    background: white;
+    height: 53px;
+}
+
+.navbar-header img{
+    margin: 7px 30px 0px 10px;
+    height: 40px;
+}
+
+.content-wrapper {
+    position: absolute;
+    bottom: 0;
+    top: 53px;
+    width: 100%;
+    overflow: auto;
+}
+
+.content-header {
+    background-color: #383b3e;
+    height: 50px;
+   /*position: relative; */
+}     
+.content-header .title {
+    color: white;
+    width: 70px;
+    font-size: 17px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    float: left;
+}
+.content-header .control-button {
+    position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+    float: left;
+}
+
+.content-header .control-button .navigation-btn {
+    background-color: Transparent; 
+    color: #e5e5e5; 
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    font-size: 70%;
+}
+.content-content-wrapper {
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    top: 50px;
+    width:100%;
+    /*overflow:auto;*/
+}
+#content-main {
+    position:absolute;
+    right:200px;
+    left:0px;
+    /*bottom: 0px;*/
+    /*top: 0px;*/
+    height: 100%;
+    padding: 7px 20px 20px 20px;
+    color: #777;
+    background: #e5e5e5;
+    overflow-y:scroll;
+
+    /*position:absolute;
+    right:200px;
+    left:0px;
+    bottom: 0px;
+    padding:20px;
+    color: #777;
+    background: #e5e5e5;
+    overflow-y:scroll;*/
+}
+#content-main .queue{
+    /*border-radius: 5px;*/
+    /*background: #fff;*/
+    padding: 7px; 
+    height: 200px;
+}
+#content-main .queue .queue-content {
+    border-radius: 5px;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+#content-main .queue .queue-title {
+    color: #ec6841;
+    font-size: 90%;
+    margin: 0px;
+    padding: 12px 8px 9px 8px;
+}
+#content-sidebar {
+    background-color: #fff;
+    position:fixed;
+    overflow-y:scroll;
+    right:0px;
+    width:200px;
+    height:100%;
+    padding: 15px;
+    color: #777;
+}
+
+#content-sidebar #content-sidebar-title {
+    color: #b1b7be;
+    font-size: 70%;
+    margin-top: 5px;
+    margin-bottom: 7px;
+}
+
+#content-sidebar .sidebar-connectedSortable {
+    /*border: 1px solid #eee;*/
+    /*width: 93%;*/
+    /*min-height: 20px;*/
+    list-style-type: none;
+    padding: 0px 0 0 0;
+    float: left;
+    margin-bottom: 20px;
+    /*margin-right: 50px;*/
+    /*background-color: #535353;*/
+  }
+#content-sidebar .sidebar-connectedSortable li {
+    font-size: 75%;
+    height:40px;
+    width: 170px;
+    /*background-color: red;*/
+     /*height: auto;*/
+  }
+
+#content-sidebar .sidebar-connectedSortable li:hover { 
+    /*background-color: #f0f0f0;*/
+    background-color: #9068be;
+    color: white !important;
+}
+
+#content-sidebar .sidebar-connectedSortable li .my-progress-bar {
+    width: 33px;
+    height: 40px;
+    /*background: red;*/
+    float: left;
+    padding: 2px;
+}
+#content-sidebar .sidebar-connectedSortable li .my-progress-bar p {
+    color:#333333 !important;
+    font-size: 90%;
+}
+#content-sidebar .sidebar-connectedSortable li .my-progress-bar > svg {
+    height: 100%;
+    /*display: block;*/
+}
+#content-sidebar .sidebar-connectedSortable li .queue-title {
+    /*margin-left: 24px;
+    margin-right: 50px;*/
+
+    height: 40px;
+    width: 100%;
+}
+#content-sidebar .sidebar-connectedSortable li .queue-title p {
+    padding-left: 34px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.table-queue{
+    width: 100%;
+    /*height: 150px;
+    overflow-y: scroll;
+    background-color: red;*/
+}
+.table-queue tr td{
+    text-align: center;
+    height: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
 
 /* ==========================================================================
 Hide ng-cloak on page load, https://docs.angularjs.org/api/ng/directive/ngCloak

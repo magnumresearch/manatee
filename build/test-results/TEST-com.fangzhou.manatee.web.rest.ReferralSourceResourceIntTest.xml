@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.fangzhou.manatee.web.rest.ReferralSourceResourceIntTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-05-08T20:02:29" hostname="Fangzhous-Mac-mini.local" time="0.188">
+  <properties/>
+  <testcase name="getAllReferralSources" classname="com.fangzhou.manatee.web.rest.ReferralSourceResourceIntTest" time="0.019"/>
+  <testcase name="getNonExistingReferralSource" classname="com.fangzhou.manatee.web.rest.ReferralSourceResourceIntTest" time="0.024"/>
+  <testcase name="updateReferralSource" classname="com.fangzhou.manatee.web.rest.ReferralSourceResourceIntTest" time="0.021"/>
+  <testcase name="createReferralSource" classname="com.fangzhou.manatee.web.rest.ReferralSourceResourceIntTest" time="0.014"/>
+  <testcase name="deleteReferralSource" classname="com.fangzhou.manatee.web.rest.ReferralSourceResourceIntTest" time="0.013"/>
+  <testcase name="getReferralSource" classname="com.fangzhou.manatee.web.rest.ReferralSourceResourceIntTest" time="0.01"/>
+  <system-out><![CDATA[Hibernate: insert into referral_source (id, created_by, created_date, last_modified_by, last_modified_date, contact, name) values (null, ?, ?, ?, ?, ?, ?)
+2016-05-08 15:02:29.178 DEBUG 3225 --- [    Test worker] c.f.m.web.rest.ReferralSourceResource    : REST request to get all ReferralSources
+2016-05-08 15:02:29.178 DEBUG 3225 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+Hibernate: select referralso0_.id as id1_9_, referralso0_.created_by as created_2_9_, referralso0_.created_date as created_3_9_, referralso0_.last_modified_by as last_mod4_9_, referralso0_.last_modified_date as last_mod5_9_, referralso0_.contact as contact6_9_, referralso0_.name as name7_9_ from referral_source referralso0_
+Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
+2016-05-08 15:02:29.223 DEBUG 3225 --- [    Test worker] c.f.m.web.rest.ReferralSourceResource    : REST request to get ReferralSource : 9223372036854775807
+Hibernate: select referralso0_.id as id1_9_0_, referralso0_.created_by as created_2_9_0_, referralso0_.created_date as created_3_9_0_, referralso0_.last_modified_by as last_mod4_9_0_, referralso0_.last_modified_date as last_mod5_9_0_, referralso0_.contact as contact6_9_0_, referralso0_.name as name7_9_0_ from referral_source referralso0_ where referralso0_.id=?
+Hibernate: insert into referral_source (id, created_by, created_date, last_modified_by, last_modified_date, contact, name) values (null, ?, ?, ?, ?, ?, ?)
+2016-05-08 15:02:29.246 DEBUG 3225 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+Hibernate: select referralso0_.id as id1_9_, referralso0_.created_by as created_2_9_, referralso0_.created_date as created_3_9_, referralso0_.last_modified_by as last_mod4_9_, referralso0_.last_modified_date as last_mod5_9_, referralso0_.contact as contact6_9_, referralso0_.name as name7_9_ from referral_source referralso0_
+Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
+2016-05-08 15:02:29.253 DEBUG 3225 --- [    Test worker] c.f.m.web.rest.ReferralSourceResource    : REST request to update ReferralSource : ReferralSource{id=2, name='BBBBB', contact='BBBBB'}
+Hibernate: update referral_source set created_date=?, last_modified_by=?, last_modified_date=?, contact=?, name=? where id=?
+Hibernate: select referralso0_.id as id1_9_, referralso0_.created_by as created_2_9_, referralso0_.created_date as created_3_9_, referralso0_.last_modified_by as last_mod4_9_, referralso0_.last_modified_date as last_mod5_9_, referralso0_.contact as contact6_9_, referralso0_.name as name7_9_ from referral_source referralso0_
+2016-05-08 15:02:29.261 DEBUG 3225 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post UPDATE audit  --------------
+Hibernate: select max(entityaudi0_.commit_version) as col_0_0_ from jhi_entity_audit_event entityaudi0_ where entityaudi0_.entity_type=? and entityaudi0_.entity_id=?
+Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select referralso0_.id as id1_9_, referralso0_.created_by as created_2_9_, referralso0_.created_date as created_3_9_, referralso0_.last_modified_by as last_mod4_9_, referralso0_.last_modified_date as last_mod5_9_, referralso0_.contact as contact6_9_, referralso0_.name as name7_9_ from referral_source referralso0_
+2016-05-08 15:02:29.286 DEBUG 3225 --- [    Test worker] c.f.m.web.rest.ReferralSourceResource    : REST request to save ReferralSource : ReferralSource{id=null, name='AAAAA', contact='AAAAA'}
+Hibernate: insert into referral_source (id, created_by, created_date, last_modified_by, last_modified_date, contact, name) values (null, ?, ?, ?, ?, ?, ?)
+Hibernate: select referralso0_.id as id1_9_, referralso0_.created_by as created_2_9_, referralso0_.created_date as created_3_9_, referralso0_.last_modified_by as last_mod4_9_, referralso0_.last_modified_date as last_mod5_9_, referralso0_.contact as contact6_9_, referralso0_.name as name7_9_ from referral_source referralso0_
+2016-05-08 15:02:29.298 DEBUG 3225 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into referral_source (id, created_by, created_date, last_modified_by, last_modified_date, contact, name) values (null, ?, ?, ?, ?, ?, ?)
+2016-05-08 15:02:29.317 DEBUG 3225 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+Hibernate: select referralso0_.id as id1_9_, referralso0_.created_by as created_2_9_, referralso0_.created_date as created_3_9_, referralso0_.last_modified_by as last_mod4_9_, referralso0_.last_modified_date as last_mod5_9_, referralso0_.contact as contact6_9_, referralso0_.name as name7_9_ from referral_source referralso0_
+Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
+2016-05-08 15:02:29.320 DEBUG 3225 --- [    Test worker] c.f.m.web.rest.ReferralSourceResource    : REST request to delete ReferralSource : 4
+Hibernate: delete from referral_source where id=?
+Hibernate: select referralso0_.id as id1_9_, referralso0_.created_by as created_2_9_, referralso0_.created_date as created_3_9_, referralso0_.last_modified_by as last_mod4_9_, referralso0_.last_modified_date as last_mod5_9_, referralso0_.contact as contact6_9_, referralso0_.name as name7_9_ from referral_source referralso0_
+2016-05-08 15:02:29.327 DEBUG 3225 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post DELETE audit  --------------
+Hibernate: select max(entityaudi0_.commit_version) as col_0_0_ from jhi_entity_audit_event entityaudi0_ where entityaudi0_.entity_type=? and entityaudi0_.entity_id=?
+Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into referral_source (id, created_by, created_date, last_modified_by, last_modified_date, contact, name) values (null, ?, ?, ?, ?, ?, ?)
+2016-05-08 15:02:29.353 DEBUG 3225 --- [    Test worker] c.f.m.web.rest.ReferralSourceResource    : REST request to get ReferralSource : 5
+2016-05-08 15:02:29.353 DEBUG 3225 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

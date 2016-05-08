@@ -1,3 +1,97 @@
+<script src="content/js/progressbar.min.js"></script>
+<script src="content/js/custom-progressbar.js"></script>
+<div id="QueueController" ng-controller="QueueController"></div>
+
+<div class="content-header">
+    <div class="title">
+    Queues 
+    </div>
+    <div class="control-button">
+    <button class="navigation-btn" ui-sref="queue.new" style="float:left;">
+                    <span class="glyphicon glyphicon-user"></span> <span>Import New Patient</span>
+                </button>
+    </div>
+
+</div> 
+
+<div class="content-content-wrapper">
+    <div id="content-sidebar">
+        <div id="content-sidebar-title">
+        LIST OF QUEUES
+        </div>
+        <ui class="sidebar-connectedSortable">
+            <li ng-repeat="team in teams" >
+                <div class="my-progress-bar" id={{team.progressbarid}}></div>     
+                <div class="queue-title"><p>{{team.name}}</p></div>
+                {{activateProgressBar(team.progressbarid, team.occupation, team.progressbarText)}}
+            </li>
+        </ui>
+        <div id="content-sidebar-title">
+            POTENTIAL DISCHARGED PATIENTS
+        </div>
+        <table class="" style="width: 100%; border-collapse: collapse;">
+            <thead class="dischargedQueueTable-head">
+                <tr>
+                    <th style="width: 2%">Recover</th>
+                    <th style="width: 10%">MRID</th>
+                    <th style="width: 10%">Name</th>
+                    <th style="width: 2%">Delete</th>
+                </tr>
+            </thead>
+            <tbody class="connectedSortable dischargedQueueTable"  id="potentialdischarge">
+                <tr ng-repeat="potentialDischargedPatient in arrayPotentialDischargedPatient" id="potentialdischarge-tr">
+                    <td style="width: 2%" ><button type="submit"
+                                ng-click="recoverFromPotentialDischarge(potentialDischargedPatient.id)"><span class="glyphicon glyphicon-circle-arrow-left"></span></button></td>
+                    <td style="width: 10%" >{{potentialDischargedPatient.patient.medicalReferralID}}</td>
+                    <td style="width: 10%">{{potentialDischargedPatient.patient.name}}</td>
+                    <td style="width: 2%"><button type="submit"
+                                ng-click="removeFromPotentialDischarge(potentialDischargedPatient.id)"><span class="glyphicon glyphicon-log-in"></span></button></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <ui class="sidebar-connectedSortable connectedSortable" id="potentialdischarge">
+            <li ng-repeat="potentialDischargedPatient in arrayPotentialDischargedPatient">
+                abc
+            </li>
+        </ui> -->
+    </div>
+    
+    <div id="content-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 queue"  ng-repeat="patientTeam in arrayPatientTeam" ng-init="$last && activateJQueryUI( )">
+                    <div class="queue-content">
+                        <p class="queue-title">{{teams[arrayPatientTeam.indexOf(patientTeam)].name}}</p>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead class="connectedSortable-head" ng-switch on="teams[arrayPatientTeam.indexOf(patientTeam)].name">
+                                <tr>
+                                    <th ng-switch-when="Outside hospital - request for transfer" style="width: 10%">Timer</th>
+                                    <th ng-switch-when="Outside hospital - in transit" style="width: 10%">Countdown</th>
+                                    <th style="width: 10%">MRID</th>
+                                    <th style="width: 10%">Name</th>
+                                </tr>
+                            </thead>
+                            <tbody  id={{teams[arrayPatientTeam.indexOf(patientTeam)].id}} class="connectedSortable queueTable">
+                                <tr ng-repeat="patientItem in patientTeam" id={{patientItem.id}} ng-switch on="teams[arrayPatientTeam.indexOf(patientTeam)].name" ng-class="{0:'default', 1:'grayout'}[patientItem.status]">
+                                    <td ng-switch-when="Outside hospital - request for transfer" style="width: 10%"><timer start-time="patientItem.timestampSince">{{ddays}}:{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
+                                    </td>
+                                    <td ng-switch-when="Outside hospital - in transit" style="width: 10%"><div ng-show="patientItem.timestampDue <= 0"></div> <div ng-show="patientItem.timestampDue > 0"><timer end-time="patientItem.timestampDue">{{ddays}}:{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
+                                    </td>
+                                    <td style="width: 10%" >{{patientItem.patient.medicalReferralID}}</td>
+                                    <td style="width: 10%"><a ui-sref="queue.edit({id:patientItem.id})">{{patientItem.patient.name}}</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <script src="content/js/custom-queue.js"></script>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 
 <div>
     <h2>Queues</h2>
     <jhi-alert></jhi-alert>
@@ -66,3 +160,4 @@
         </table>
     </div>
 </div>
+ -->

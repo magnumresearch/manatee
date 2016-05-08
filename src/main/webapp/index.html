@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>manatee</title>
+    <title>Manatee</title>
+    <!-- manatee code -->
+    <link ref="shortcut icon" href="content/images/logo.jpg">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -16,22 +18,35 @@
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
+
+    <!-- manatee code -->
+    <link rel="stylesheet" href="content/css/custom.css">
+    <link rel="stylesheet" href="content/css/jquery-ui.min.css">
     <!-- endbuild -->
 </head>
 <body ng-app="manateeApp">
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <page-ribbon></page-ribbon>
+    <!-- <page-ribbon></page-ribbon>
     <div ui-view="navbar" ng-cloak></div>
     <div class="container">
         <div class="well" ui-view="content">
-            <!-- Angular views -->
         </div>
 
         <div class="footer" ng-cloak>
             <p>This is your footer</p>
         </div>
+    </div> -->
+    <div id="body-wrapper">
+            <div ui-view="navbar" ng-cloak=""></div>
+            <div class="content-wrapper" ui-view="content">
+                <!-- <div class="well" style="background: yellow;"></div> -->
+
+               <!--  <div class="footer">
+                    <p translate="footer">This is your footer</p>
+                </div> -->
+            </div>
     </div>
 
     <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
@@ -198,6 +213,13 @@
     <script src="app/account/account.state.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
+
+    <!-- manatee code -->    
+    <script src="content/js/jquery-ui.min.js"></script>
+    <!-- <script src="content/js/custom-queue.js"></script> -->
+    <script src="content/js/sockjs.min.js"></script>
+    <script src="content/js/stomp.min.js"></script>
+    <script src="content/js/queue.service.websocket.js"></script>
 
 </body>
 </html>
