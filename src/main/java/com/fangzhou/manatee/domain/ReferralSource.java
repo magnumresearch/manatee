@@ -13,7 +13,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "referral_source")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class ReferralSource implements Serializable {
+public class ReferralSource extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
