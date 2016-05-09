@@ -43,3 +43,27 @@ function activatejQueryUI() {
     }).disableSelection();
 }
 
+setInterval(refresh_queue_page, 60000);
+last_update_timestamp = new Date().getTime();
+
+function refresh_queue_page() {
+  $('#QueueController').scope().addMessage();
+  // new_update_timestamp = new Date().getTime();
+  // if (isRepeat) {      
+  //   if (new_update_timestamp-last_update_timestamp<60) {
+  //     last_update_timestamp = new_update_timestamp;
+  //     console.log("isRepeat");
+  //     console.log(isRepeat);
+  //     console.log(last_update_timestamp);
+  //   } else {
+  //     $('#QueueController').scope().addMessage();
+  //     console.log("isRepeat");
+  //     console.log(isRepeat);
+  //     console.log(last_update_timestamp);
+  //   }
+  // } else {
+  //   last_update_timestamp = new_update_timestamp;
+  // }
+    
+}
+

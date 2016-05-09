@@ -11,6 +11,7 @@
         var vm = this;
         $scope.queues = [];
         $scope.loadAll = function() {
+
             var arrayTeam = [];
             var arrayPatientTeam = [];
             var arrayPotentialDischargedPatient = [];
@@ -31,6 +32,10 @@
                                     for (var j in arrayTeam) {
                                         if (arrayTeam[j]['name'] ==result[i]['team']['name']) {
                                             var tmp = result[i];
+                                            // // check if name equals empty
+                                            // if(tmp['patient'] && tmp['patient']['name']=='') {
+                                            //     tmp['patient']['name']=' ';
+                                            // }
                                             if (result[i]['timestampInitial']) {
                                                 var initialDate = result[i]['timestampInitial'];
                                                 tmp['timestampSince'] = new Date(initialDate).getTime();
@@ -85,6 +90,7 @@
 
         ChatService.receive().then(null, null, function(message) {
             // console.log("receive test message");
+            // refresh_queue_page(false);
             $scope.loadAll(function(result) {
                 $scope.activateProgressBar();
             });
@@ -129,13 +135,18 @@
         }
         $scope.removeFromPotentialDischarge = function(queueID) {
             console.log(queueID);
-            Queue.get({
-                id: queueID
-            }, function(result) {
-                console.log(result);
-                $scope.queue = result;
-                $('#deleteQueueConfirmation').modal('show');
-            });
+            Queue.delete({id: queueID},
+                function () {
+                    $scope.addMessage();
+                });
+
+            // Queue.get({
+            //     id: queueID
+            // }, function(result) {
+            //     console.log(result);
+            //     $scope.queue = result;
+            //     $('#deleteQueueConfirmation').modal('show');
+            // });
         };
         $scope.delete = function(id) {
             Queue.get({

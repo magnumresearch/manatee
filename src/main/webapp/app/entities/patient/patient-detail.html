@@ -32,7 +32,33 @@
             <a ui-sref="referral-source-detail({id:vm.patient.referralSource.id})">{{vm.patient.referralSource.id}}</a>
         </dd>
     </dl>
-
+    <br/>
+    <h4><span>History</span></h4>
+    <div>
+        <table class="history-table" style="width: 100%; border-collapse: collapse;">
+            <thead class="">
+                <tr>
+                    <th style="width: 2%">Team ID</th>
+                    <th style="width: 2%">Team Name</th>
+                    <th style="width: 2%">Potential Discharged</th>
+                    <th style="width: 2%">Action</th>
+                    <th style="width: 2%">Last Modified Date</th>
+                    <th style="width: 2%">Last Modified By</th>
+                </tr>
+            </thead>
+            <tbody class=""  id="">
+                <tr ng-repeat="patientHistory in patientHistories" id="potentialdischarge-tr">
+                    <td style="width: 2%" >{{patientHistory.teamId}}</td>
+                    <td style="width: 2%" >{{patientHistory.teamName}}</td>
+                    <td style="width: 2%" >{{patientHistory.potentialDischarged}}</td>
+                    <td style="width: 2%" >{{patientHistory.action}}</td>
+                    <td style="width: 2%">{{patientHistory.lastModifiedDate}}</td>
+                    <td style="width: 2%">{{patientHistory.lastModifiedBy}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br/>
     <button type="submit"
             onclick="window.history.back()"
             class="btn btn-info">
