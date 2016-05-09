@@ -17,7 +17,7 @@
         $scope.$on('$destroy', unsubscribe);
 
         $scope.loadPatientHistory = function() {
-            EntityAuditService.findByEntity("com.fangzhou.manatee.domain.Queue", 25).then(function (data) {
+            EntityAuditService.findByEntity("com.fangzhou.manatee.domain.Queue", 9999).then(function (data) {
                 var audits = data.map(function(it){
                     it.entityValue = JSON.parse(it.entityValue);
                     return it;
