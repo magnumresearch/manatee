@@ -10,6 +10,17 @@
     function QueueController ($scope, $state, Queue, ChatService, Team) {
         var vm = this;
         $scope.queues = [];
+
+        function get_max_for_today(one_team) {
+            var weekdays = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+            var d = new Date();
+            var n = d.getDay();
+            if (one_team[weekdays[n]])
+                return one_team[weekdays[n]]
+            else
+                return one_team['maxPatients']
+        }
+
         $scope.loadAll = function() {
 
             var arrayTeam = [];
@@ -19,8 +30,11 @@
                 for (var i in result) {                    
                     if(typeof result[i] ==="object")
                         if ('name' in result[i]) {
-                            arrayTeam.push({'id':result[i]['id'], 'name': result[i]['name'], 'space': result[i]['maxPatients'], 'progressbarid':'progressbar-'+result[i]['id'] });
+                            arrayTeam.push({'id':result[i]['id'], 'name': result[i]['name'], 'space': get_max_for_today(result[i]), 'progressbarid':'progressbar-'+result[i]['id'] });
+                            // arrayTeam.push({'id':result[i]['id'], 'name': result[i]['name'], 'space': result[i]['maxPatients'], 'progressbarid':'progressbar-'+result[i]['id'] });
                             arrayPatientTeam.push([]);
+                            // console.log(result[i]['name']);
+                            // console.log(get_max_for_today(result[i]));
                         }
                 }  
                 
@@ -32,6 +46,7 @@
                                     for (var j in arrayTeam) {
                                         if (arrayTeam[j]['name'] ==result[i]['team']['name']) {
                                             var tmp = result[i];
+                                            // console.log(tmp);
                                             // // check if name equals empty
                                             // if(tmp['patient'] && tmp['patient']['name']=='') {
                                             //     tmp['patient']['name']=' ';

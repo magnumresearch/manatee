@@ -8,6 +8,13 @@ entity Team {
     name String,
     specialty String,
     maxPatients Long,
+    monday Long,
+    tuesday Long,
+    wednesday Long,
+    thursday Long,
+    friday Long,
+    saturday Long,
+    sunday Long,
 }
 
 entity ReferralSource {

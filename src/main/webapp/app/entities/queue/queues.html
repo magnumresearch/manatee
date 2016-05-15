@@ -45,7 +45,7 @@
                 <tr ng-repeat="potentialDischargedPatient in arrayPotentialDischargedPatient" id="potentialdischarge-tr">
                     <td style="width: 2%" ><button type="submit"
                                 ng-click="recoverFromPotentialDischarge(potentialDischargedPatient.id)"><span class="glyphicon glyphicon-circle-arrow-left"></span></button></td>
-                    <td style="width: 10%" >{{potentialDischargedPatient.patient.medicalReferralID}}</td>
+                    <td style="width: 10%" >{{potentialDischargedPatient.patient.medicalReferralId}}</td>
                     <td style="width: 10%">{{potentialDischargedPatient.patient.name}}</td>
                     <td style="width: 2%"><button type="submit"
                                 ng-click="removeFromPotentialDischarge(potentialDischargedPatient.id)"><span class="glyphicon glyphicon-log-in"></span></button></td>
@@ -80,7 +80,7 @@
                                     </td>
                                     <td ng-switch-when="Outside hospital - in transit" style="width: 10%"><div ng-show="patientItem.timestampDue <= 0"></div> <div ng-show="patientItem.timestampDue > 0"><timer end-time="patientItem.timestampDue">{{ddays}}:{{hhours}}:{{mminutes}}:{{sseconds}}</timer>
                                     </td>
-                                    <td style="width: 10%" >{{patientItem.patient.medicalReferralID}}</td>
+                                    <td style="width: 10%" >{{patientItem.patient.medicalReferralId}}</td>
                                     <td style="width: 10%"><a ui-sref="queue.edit({id:patientItem.id})">{{patientItem.patient.name}}</a></td>
                                 </tr>
                             </tbody>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fangzhou.manatee.web.rest.AuditResourceIntTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-05-08T20:02:27" hostname="Fangzhous-Mac-mini.local" time="0.307">
+<testsuite name="com.fangzhou.manatee.web.rest.AuditResourceIntTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-05-15T22:10:21" hostname="Fangzhous-Mac-mini.local" time="0.531">
   <properties/>
-  <testcase name="getNonExistingAudit" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.031"/>
-  <testcase name="getNonExistingAuditsByDate" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.106"/>
-  <testcase name="getAllAudits" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.104"/>
-  <testcase name="getAuditsByDate" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.037"/>
-  <testcase name="getAudit" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.025"/>
+  <testcase name="getNonExistingAudit" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.116"/>
+  <testcase name="getNonExistingAuditsByDate" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.168"/>
+  <testcase name="getAllAudits" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.145"/>
+  <testcase name="getAuditsByDate" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.063"/>
+  <testcase name="getAudit" classname="com.fangzhou.manatee.web.rest.AuditResourceIntTest" time="0.031"/>
   <system-out><![CDATA[Hibernate: select persistent0_.event_id as event_id1_2_, persistent0_.event_date as event_da2_2_, persistent0_.event_type as event_ty3_2_, persistent0_.principal as principa4_2_ from jhi_persistent_audit_event persistent0_
 Hibernate: select persistent0_.event_id as event_id1_2_0_, persistent0_.event_date as event_da2_2_0_, persistent0_.event_type as event_ty3_2_0_, persistent0_.principal as principa4_2_0_ from jhi_persistent_audit_event persistent0_ where persistent0_.event_id=?
 Hibernate: select persistent0_.event_id as event_id1_2_, persistent0_.event_date as event_da2_2_, persistent0_.event_type as event_ty3_2_, persistent0_.principal as principa4_2_ from jhi_persistent_audit_event persistent0_

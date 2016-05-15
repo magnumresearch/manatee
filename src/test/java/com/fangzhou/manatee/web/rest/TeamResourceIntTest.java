@@ -51,6 +51,27 @@ public class TeamResourceIntTest {
     private static final Long DEFAULT_MAX_PATIENTS = 1L;
     private static final Long UPDATED_MAX_PATIENTS = 2L;
 
+    private static final Long DEFAULT_MONDAY = 1L;
+    private static final Long UPDATED_MONDAY = 2L;
+
+    private static final Long DEFAULT_TUESDAY = 1L;
+    private static final Long UPDATED_TUESDAY = 2L;
+
+    private static final Long DEFAULT_WEDNESDAY = 1L;
+    private static final Long UPDATED_WEDNESDAY = 2L;
+
+    private static final Long DEFAULT_THURSDAY = 1L;
+    private static final Long UPDATED_THURSDAY = 2L;
+
+    private static final Long DEFAULT_FRIDAY = 1L;
+    private static final Long UPDATED_FRIDAY = 2L;
+
+    private static final Long DEFAULT_SATURDAY = 1L;
+    private static final Long UPDATED_SATURDAY = 2L;
+
+    private static final Long DEFAULT_SUNDAY = 1L;
+    private static final Long UPDATED_SUNDAY = 2L;
+
     @Inject
     private TeamRepository teamRepository;
 
@@ -81,6 +102,13 @@ public class TeamResourceIntTest {
         team.setName(DEFAULT_NAME);
         team.setSpecialty(DEFAULT_SPECIALTY);
         team.setMaxPatients(DEFAULT_MAX_PATIENTS);
+        team.setMonday(DEFAULT_MONDAY);
+        team.setTuesday(DEFAULT_TUESDAY);
+        team.setWednesday(DEFAULT_WEDNESDAY);
+        team.setThursday(DEFAULT_THURSDAY);
+        team.setFriday(DEFAULT_FRIDAY);
+        team.setSaturday(DEFAULT_SATURDAY);
+        team.setSunday(DEFAULT_SUNDAY);
     }
 
     @Test
@@ -103,6 +131,13 @@ public class TeamResourceIntTest {
         assertThat(testTeam.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testTeam.getSpecialty()).isEqualTo(DEFAULT_SPECIALTY);
         assertThat(testTeam.getMaxPatients()).isEqualTo(DEFAULT_MAX_PATIENTS);
+        assertThat(testTeam.getMonday()).isEqualTo(DEFAULT_MONDAY);
+        assertThat(testTeam.getTuesday()).isEqualTo(DEFAULT_TUESDAY);
+        assertThat(testTeam.getWednesday()).isEqualTo(DEFAULT_WEDNESDAY);
+        assertThat(testTeam.getThursday()).isEqualTo(DEFAULT_THURSDAY);
+        assertThat(testTeam.getFriday()).isEqualTo(DEFAULT_FRIDAY);
+        assertThat(testTeam.getSaturday()).isEqualTo(DEFAULT_SATURDAY);
+        assertThat(testTeam.getSunday()).isEqualTo(DEFAULT_SUNDAY);
     }
 
     @Test
@@ -119,7 +154,14 @@ public class TeamResourceIntTest {
                 .andExpect(jsonPath("$.[*].organization").value(hasItem(DEFAULT_ORGANIZATION.toString())))
                 .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
                 .andExpect(jsonPath("$.[*].specialty").value(hasItem(DEFAULT_SPECIALTY.toString())))
-                .andExpect(jsonPath("$.[*].maxPatients").value(hasItem(DEFAULT_MAX_PATIENTS.intValue())));
+                .andExpect(jsonPath("$.[*].maxPatients").value(hasItem(DEFAULT_MAX_PATIENTS.intValue())))
+                .andExpect(jsonPath("$.[*].monday").value(hasItem(DEFAULT_MONDAY.intValue())))
+                .andExpect(jsonPath("$.[*].tuesday").value(hasItem(DEFAULT_TUESDAY.intValue())))
+                .andExpect(jsonPath("$.[*].wednesday").value(hasItem(DEFAULT_WEDNESDAY.intValue())))
+                .andExpect(jsonPath("$.[*].thursday").value(hasItem(DEFAULT_THURSDAY.intValue())))
+                .andExpect(jsonPath("$.[*].friday").value(hasItem(DEFAULT_FRIDAY.intValue())))
+                .andExpect(jsonPath("$.[*].saturday").value(hasItem(DEFAULT_SATURDAY.intValue())))
+                .andExpect(jsonPath("$.[*].sunday").value(hasItem(DEFAULT_SUNDAY.intValue())));
     }
 
     @Test
@@ -136,7 +178,14 @@ public class TeamResourceIntTest {
             .andExpect(jsonPath("$.organization").value(DEFAULT_ORGANIZATION.toString()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
             .andExpect(jsonPath("$.specialty").value(DEFAULT_SPECIALTY.toString()))
-            .andExpect(jsonPath("$.maxPatients").value(DEFAULT_MAX_PATIENTS.intValue()));
+            .andExpect(jsonPath("$.maxPatients").value(DEFAULT_MAX_PATIENTS.intValue()))
+            .andExpect(jsonPath("$.monday").value(DEFAULT_MONDAY.intValue()))
+            .andExpect(jsonPath("$.tuesday").value(DEFAULT_TUESDAY.intValue()))
+            .andExpect(jsonPath("$.wednesday").value(DEFAULT_WEDNESDAY.intValue()))
+            .andExpect(jsonPath("$.thursday").value(DEFAULT_THURSDAY.intValue()))
+            .andExpect(jsonPath("$.friday").value(DEFAULT_FRIDAY.intValue()))
+            .andExpect(jsonPath("$.saturday").value(DEFAULT_SATURDAY.intValue()))
+            .andExpect(jsonPath("$.sunday").value(DEFAULT_SUNDAY.intValue()));
     }
 
     @Test
@@ -161,6 +210,13 @@ public class TeamResourceIntTest {
         updatedTeam.setName(UPDATED_NAME);
         updatedTeam.setSpecialty(UPDATED_SPECIALTY);
         updatedTeam.setMaxPatients(UPDATED_MAX_PATIENTS);
+        updatedTeam.setMonday(UPDATED_MONDAY);
+        updatedTeam.setTuesday(UPDATED_TUESDAY);
+        updatedTeam.setWednesday(UPDATED_WEDNESDAY);
+        updatedTeam.setThursday(UPDATED_THURSDAY);
+        updatedTeam.setFriday(UPDATED_FRIDAY);
+        updatedTeam.setSaturday(UPDATED_SATURDAY);
+        updatedTeam.setSunday(UPDATED_SUNDAY);
 
         restTeamMockMvc.perform(put("/api/teams")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -175,6 +231,13 @@ public class TeamResourceIntTest {
         assertThat(testTeam.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testTeam.getSpecialty()).isEqualTo(UPDATED_SPECIALTY);
         assertThat(testTeam.getMaxPatients()).isEqualTo(UPDATED_MAX_PATIENTS);
+        assertThat(testTeam.getMonday()).isEqualTo(UPDATED_MONDAY);
+        assertThat(testTeam.getTuesday()).isEqualTo(UPDATED_TUESDAY);
+        assertThat(testTeam.getWednesday()).isEqualTo(UPDATED_WEDNESDAY);
+        assertThat(testTeam.getThursday()).isEqualTo(UPDATED_THURSDAY);
+        assertThat(testTeam.getFriday()).isEqualTo(UPDATED_FRIDAY);
+        assertThat(testTeam.getSaturday()).isEqualTo(UPDATED_SATURDAY);
+        assertThat(testTeam.getSunday()).isEqualTo(UPDATED_SUNDAY);
     }
 
     @Test

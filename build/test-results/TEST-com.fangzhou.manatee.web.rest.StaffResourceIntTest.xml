@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.fangzhou.manatee.web.rest.StaffResourceIntTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-05-08T20:02:29" hostname="Fangzhous-Mac-mini.local" time="0.214">
+<testsuite name="com.fangzhou.manatee.web.rest.StaffResourceIntTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-05-15T22:10:23" hostname="Fangzhous-Mac-mini.local" time="0.281">
   <properties/>
-  <testcase name="getNonExistingStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.015"/>
-  <testcase name="deleteStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.022"/>
-  <testcase name="updateStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.032"/>
-  <testcase name="createStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.021"/>
-  <testcase name="getAllStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.015"/>
-  <testcase name="getStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.012"/>
-  <system-out><![CDATA[2016-05-08 15:02:29.438 DEBUG 3225 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to get Staff : 9223372036854775807
-Hibernate: select staff0_.id as id1_10_0_, staff0_.created_by as created_2_10_0_, staff0_.created_date as created_3_10_0_, staff0_.last_modified_by as last_mod4_10_0_, staff0_.last_modified_date as last_mod5_10_0_, staff0_.name as name6_10_0_, staff0_.role as role7_10_0_, staff0_.team_id as team_id8_10_0_, team1_.id as id1_11_1_, team1_.created_by as created_2_11_1_, team1_.created_date as created_3_11_1_, team1_.last_modified_by as last_mod4_11_1_, team1_.last_modified_date as last_mod5_11_1_, team1_.max_patients as max_pati6_11_1_, team1_.name as name7_11_1_, team1_.organization as organiza8_11_1_, team1_.specialty as specialt9_11_1_ from staff staff0_ left outer join team team1_ on staff0_.team_id=team1_.id where staff0_.id=?
+  <testcase name="getNonExistingStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.014"/>
+  <testcase name="deleteStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.032"/>
+  <testcase name="updateStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.053"/>
+  <testcase name="createStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.018"/>
+  <testcase name="getAllStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.021"/>
+  <testcase name="getStaff" classname="com.fangzhou.manatee.web.rest.StaffResourceIntTest" time="0.022"/>
+  <system-out><![CDATA[2016-05-15 17:10:23.563 DEBUG 19584 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to get Staff : 9223372036854775807
+Hibernate: select staff0_.id as id1_10_0_, staff0_.created_by as created_2_10_0_, staff0_.created_date as created_3_10_0_, staff0_.last_modified_by as last_mod4_10_0_, staff0_.last_modified_date as last_mod5_10_0_, staff0_.name as name6_10_0_, staff0_.role as role7_10_0_, staff0_.team_id as team_id8_10_0_, team1_.id as id1_11_1_, team1_.friday as friday2_11_1_, team1_.max_patients as max_pati3_11_1_, team1_.monday as monday4_11_1_, team1_.name as name5_11_1_, team1_.organization as organiza6_11_1_, team1_.saturday as saturday7_11_1_, team1_.specialty as specialt8_11_1_, team1_.sunday as sunday9_11_1_, team1_.thursday as thursda10_11_1_, team1_.tuesday as tuesday11_11_1_, team1_.wednesday as wednesd12_11_1_ from staff staff0_ left outer join team team1_ on staff0_.team_id=team1_.id where staff0_.id=?
 Hibernate: insert into staff (id, created_by, created_date, last_modified_by, last_modified_date, name, role, team_id) values (null, ?, ?, ?, ?, ?, ?, ?)
-2016-05-08 15:02:29.470 DEBUG 3225 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+2016-05-15 17:10:23.603 DEBUG 19584 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
 Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
 Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
-2016-05-08 15:02:29.479 DEBUG 3225 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to delete Staff : 1
+2016-05-15 17:10:23.613 DEBUG 19584 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to delete Staff : 1
 Hibernate: delete from staff where id=?
+2016-05-15 17:10:23.619 DEBUG 19584 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post DELETE audit  --------------
 Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
-2016-05-08 15:02:29.484 DEBUG 3225 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post DELETE audit  --------------
 Hibernate: select max(entityaudi0_.commit_version) as col_0_0_ from jhi_entity_audit_event entityaudi0_ where entityaudi0_.entity_type=? and entityaudi0_.entity_id=?
 Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
 Hibernate: insert into staff (id, created_by, created_date, last_modified_by, last_modified_date, name, role, team_id) values (null, ?, ?, ?, ?, ?, ?, ?)
+2016-05-15 17:10:23.647 DEBUG 19584 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
 Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
-2016-05-08 15:02:29.515 DEBUG 3225 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
 Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
-2016-05-08 15:02:29.522 DEBUG 3225 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to update Staff : Staff{id=2, name='BBBBB', role='BBBBB'}
+2016-05-15 17:10:23.669 DEBUG 19584 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to update Staff : Staff{id=2, name='BBBBB', role='BBBBB'}
 Hibernate: update staff set created_date=?, last_modified_by=?, last_modified_date=?, name=?, role=?, team_id=? where id=?
-Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
-2016-05-08 15:02:29.531 DEBUG 3225 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post UPDATE audit  --------------
+2016-05-15 17:10:23.680 DEBUG 19584 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post UPDATE audit  --------------
 Hibernate: select max(entityaudi0_.commit_version) as col_0_0_ from jhi_entity_audit_event entityaudi0_ where entityaudi0_.entity_type=? and entityaudi0_.entity_id=?
-Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
-2016-05-08 15:02:29.563 DEBUG 3225 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to save Staff : Staff{id=null, name='AAAAA', role='AAAAA'}
-Hibernate: insert into staff (id, created_by, created_date, last_modified_by, last_modified_date, name, role, team_id) values (null, ?, ?, ?, ?, ?, ?, ?)
-2016-05-08 15:02:29.571 DEBUG 3225 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
 Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
 Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
+2016-05-15 17:10:23.724 DEBUG 19584 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to save Staff : Staff{id=null, name='AAAAA', role='AAAAA'}
 Hibernate: insert into staff (id, created_by, created_date, last_modified_by, last_modified_date, name, role, team_id) values (null, ?, ?, ?, ?, ?, ?, ?)
-2016-05-08 15:02:29.605 DEBUG 3225 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+2016-05-15 17:10:23.728 DEBUG 19584 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
 Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
-2016-05-08 15:02:29.610 DEBUG 3225 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to get all Staff
 Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
 Hibernate: insert into staff (id, created_by, created_date, last_modified_by, last_modified_date, name, role, team_id) values (null, ?, ?, ?, ?, ?, ?, ?)
-2016-05-08 15:02:29.636 DEBUG 3225 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+2016-05-15 17:10:23.769 DEBUG 19584 --- [atee-Executor-2] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
 Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
-2016-05-08 15:02:29.640 DEBUG 3225 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to get Staff : 5
+2016-05-15 17:10:23.775 DEBUG 19584 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to get all Staff
+Hibernate: select staff0_.id as id1_10_, staff0_.created_by as created_2_10_, staff0_.created_date as created_3_10_, staff0_.last_modified_by as last_mod4_10_, staff0_.last_modified_date as last_mod5_10_, staff0_.name as name6_10_, staff0_.role as role7_10_, staff0_.team_id as team_id8_10_ from staff staff0_
+Hibernate: insert into staff (id, created_by, created_date, last_modified_by, last_modified_date, name, role, team_id) values (null, ?, ?, ?, ?, ?, ?, ?)
+2016-05-15 17:10:23.827 DEBUG 19584 --- [atee-Executor-1] c.f.m.c.a.AsyncEntityAuditEventWriter    : -------------- Post CREATE audit  --------------
+Hibernate: insert into jhi_entity_audit_event (id, action, commit_version, entity_id, entity_type, entity_value, modified_by, modified_date) values (null, ?, ?, ?, ?, ?, ?, ?)
+2016-05-15 17:10:23.835 DEBUG 19584 --- [    Test worker] c.f.manatee.web.rest.StaffResource       : REST request to get Staff : 5
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -37,14 +37,34 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="created_by" type="varchar(50)">
-                <constraints nullable="false"/>
+            <column name="monday" type="bigint">
+                <constraints nullable="true" />
             </column>
-            <column name="created_date" type="timestamp" defaultValueDate="${now}">
-                <constraints nullable="false"/>
+            
+            <column name="tuesday" type="bigint">
+                <constraints nullable="true" />
             </column>
-            <column name="last_modified_by" type="varchar(50)"/>
-            <column name="last_modified_date" type="timestamp"/>
+            
+            <column name="wednesday" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="thursday" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="friday" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="saturday" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="sunday" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            
             <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
         </createTable>
         

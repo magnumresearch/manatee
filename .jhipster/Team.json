@@ -20,6 +20,41 @@
       "fieldId": 4,
       "fieldName": "maxPatients",
       "fieldType": "Long"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "monday",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "tuesday",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "wednesday",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "thursday",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "friday",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "saturday",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "sunday",
+      "fieldType": "Long"
     }
   ],
   "changelogDate": "20160508162044",

@@ -13,7 +13,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "team")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class Team extends AbstractAuditingEntity implements Serializable {
+public class Team implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -32,6 +32,27 @@ public class Team extends AbstractAuditingEntity implements Serializable {
 
     @Column(name = "max_patients")
     private Long maxPatients;
+
+    @Column(name = "monday")
+    private Long monday;
+
+    @Column(name = "tuesday")
+    private Long tuesday;
+
+    @Column(name = "wednesday")
+    private Long wednesday;
+
+    @Column(name = "thursday")
+    private Long thursday;
+
+    @Column(name = "friday")
+    private Long friday;
+
+    @Column(name = "saturday")
+    private Long saturday;
+
+    @Column(name = "sunday")
+    private Long sunday;
 
     public Long getId() {
         return id;
@@ -73,6 +94,62 @@ public class Team extends AbstractAuditingEntity implements Serializable {
         this.maxPatients = maxPatients;
     }
 
+    public Long getMonday() {
+        return monday;
+    }
+
+    public void setMonday(Long monday) {
+        this.monday = monday;
+    }
+
+    public Long getTuesday() {
+        return tuesday;
+    }
+
+    public void setTuesday(Long tuesday) {
+        this.tuesday = tuesday;
+    }
+
+    public Long getWednesday() {
+        return wednesday;
+    }
+
+    public void setWednesday(Long wednesday) {
+        this.wednesday = wednesday;
+    }
+
+    public Long getThursday() {
+        return thursday;
+    }
+
+    public void setThursday(Long thursday) {
+        this.thursday = thursday;
+    }
+
+    public Long getFriday() {
+        return friday;
+    }
+
+    public void setFriday(Long friday) {
+        this.friday = friday;
+    }
+
+    public Long getSaturday() {
+        return saturday;
+    }
+
+    public void setSaturday(Long saturday) {
+        this.saturday = saturday;
+    }
+
+    public Long getSunday() {
+        return sunday;
+    }
+
+    public void setSunday(Long sunday) {
+        this.sunday = sunday;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -101,6 +178,13 @@ public class Team extends AbstractAuditingEntity implements Serializable {
             ", name='" + name + "'" +
             ", specialty='" + specialty + "'" +
             ", maxPatients='" + maxPatients + "'" +
+            ", monday='" + monday + "'" +
+            ", tuesday='" + tuesday + "'" +
+            ", wednesday='" + wednesday + "'" +
+            ", thursday='" + thursday + "'" +
+            ", friday='" + friday + "'" +
+            ", saturday='" + saturday + "'" +
+            ", sunday='" + sunday + "'" +
             '}';
     }
 }
