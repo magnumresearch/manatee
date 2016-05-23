@@ -15,9 +15,14 @@
                 authorities: []
             },
             views: {
+                // 'content@': {
+                //     templateUrl: 'app/home/home.html',
+                //     controller: 'HomeController',
+                //     controllerAs: 'vm'
+                // }
                 'content@': {
-                    templateUrl: 'app/home/home.html',
-                    controller: 'HomeController',
+                    templateUrl: 'app/entities/queue/queues.html',
+                    controller: 'QueueController',
                     controllerAs: 'vm'
                 }
             }

@@ -125,6 +125,40 @@
                 });
             }]
         })
+        .state('queue.newpatient', {
+            parent: 'queue',
+            url: '/newpatient',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/queue/queue-patient-dialog.html',
+                    controller: 'QueuePatientDialogController',
+                    controllerAs: 'vm',
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+                        entity: function () {
+                            return {
+                                name: null,
+                                medicalReferralId: null,
+                                age: null,
+                                conditionDesciption: null,
+                                priority: null,
+                                deadline: null,
+                                id: null
+                            };
+                        }
+                    }
+                }).result.then(function() {
+                    // $state.go('queue', null, { reload: true });
+                    $state.go('queue', null, { reload: true });
+                }, function() {
+                    $state.go('queue');
+                });
+            }]
+        })
         ;
     }
 
