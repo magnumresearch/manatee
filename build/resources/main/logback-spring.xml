@@ -4,23 +4,25 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
 <!-- The FILE and ASYNC appenders are here as examples for a production configuration -->
-<!--
+
+    <property name="LOG_DIR" value="/app001" />
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/application.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>90</maxHistory>
+            <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
             <charset>utf-8</charset>
             <Pattern>%d %-5level [%thread] %logger{0}: %msg%n</Pattern>
         </encoder>
     </appender>
-
-    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
-        <queueSize>512</queueSize>
-        <appender-ref ref="FILE"/>
-    </appender>
--->
+    <!--
+        <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+            <queueSize>512</queueSize>
+            <appender-ref ref="FILE"/>
+        </appender>
+    -->
 
     <logger name="com.fangzhou.manatee" level="DEBUG"/>
 

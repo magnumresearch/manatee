@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -15,6 +16,12 @@ import java.util.List;
 public interface PersistenceAuditEventRepository extends JpaRepository<PersistentAuditEvent, Long> {
 
     List<PersistentAuditEvent> findByPrincipal(String principal);
+
+    List<PersistentAuditEvent> findByAuditEventDateAfter(LocalDateTime date);
+
+    List<PersistentAuditEvent> findByPrincipalAndAuditEventDateAfterAndAuditEventType(String principal, LocalDateTime after, String type);
+
+    List<PersistentAuditEvent> findByAuditEventDate(LocalDateTime date);
 
     List<PersistentAuditEvent> findByPrincipalAndAuditEventDateAfter(String principal, LocalDateTime after);
 
